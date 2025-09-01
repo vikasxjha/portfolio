@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vikas Jha - Senior AWS DevOps Engineer | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color-dark: #4ade80;
+        --secondary-color-dark: #1a743d;
+        --background-color-dark: #111827;
+        --surface-color-dark: #1f2937;
+        --text-primary-dark: #e5e7eb;
+        --text-secondary-dark: #9ca3af;
+        --accent-color-dark: #3b82f6;
+        --primary-color-light: #3b82f6;
+        --secondary-color-light: #dbeafe;
+        --background-color-light: #ffffff;
+        --surface-color-light: #f3f4f6;
+        --text-primary-light: #111827;
+        --text-secondary-light: #4b5563;
+        --accent-color-light: #3b82f6;
+      }
+
+      .dark {
+        --primary-color: var(--primary-color-dark);
+        --secondary-color: var(--secondary-color-dark);
+        --background-color: var(--background-color-dark);
+        --surface-color: var(--surface-color-dark);
+        --text-primary: var(--text-primary-dark);
+        --text-secondary: var(--text-secondary-dark);
+        --accent-color: var(--accent-color-dark);
+      }
+
+      .light {
+        --primary-color: var(--primary-color-light);
+        --secondary-color: var(--secondary-color-light);
+        --background-color: var(--background-color-light);
+        --surface-color: var(--surface-color-light);
+        --text-primary: var(--text-primary-light);
+        --text-secondary: var(--text-secondary-light);
+        --accent-color: var(--accent-color-light);
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .smooth-scroll {
+        scroll-behavior: smooth;
+      }
+
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          var(--background-color) 0%,
+          var(--surface-color) 100%
+        );
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        border: 3px solid var(--background-color);
+      }
+
+      /* Enhanced Button Animations */
+      .btn-primary {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(74, 222, 128, 0.3);
+      }
+
+      .btn-secondary {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .btn-secondary:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+      }
+
+      /* Enhanced Card Hover Effects */
+      .card-enhanced {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+
+      .card-enhanced:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .card-enhanced::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+        filter: blur(10px);
+      }
+
+      .card-enhanced:hover::before {
+        opacity: 0.1;
+      }
+
+      /* Project Card Special Animation */
+      .project-card {
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.05);
+      }
+
+      .project-image {
+        transition: transform 0.4s ease;
+      }
+
+      /* Enhanced Link Animations */
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 50%;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Contact Card Animations */
+      .contact-card {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary-color);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Timeline Animation */
+      .timeline-card {
+        transition: all 0.4s ease;
+      }
+
+      .timeline-card:hover {
+        transform: translateX(10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Certification Badge Animation */
+      .cert-badge {
+        transition: all 0.3s ease;
+      }
+
+      .cert-badge:hover {
+        transform: rotate(5deg) scale(1.1);
+      }
+
+      /* Custom Pulse Animation */
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 0 20px rgba(74, 222, 128, 0);
+        }
+      }
+
+      .pulse-glow {
+        animation: pulse-glow 2s infinite;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Gradient Text Animation */
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .gradient-text-animated {
+        background: linear-gradient(
+          -45deg,
+          var(--primary-color),
+          var(--accent-color),
+          #ee7752,
+          #e73c7e
+        );
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      /* Theme Toggle Animation */
+      .theme-toggle-switch {
+        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      /* Skill Icon Animation */
+      .skill-icon {
+        transition: all 0.3s ease;
+      }
+
+      .skill-icon:hover {
+        transform: rotateY(180deg) scale(1.2);
+        color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[var(--background-color)] text-[var(--text-primary)] smooth-scroll transition-colors duration-300"
+  >
+    <div
+      class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden"
+      id="theme-container"
+    >
+      <!-- Header Navigation -->
+      <header
+        class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-[var(--background-color)]/80 px-4 md:px-10 py-4 backdrop-blur-sm transition-colors duration-300"
+      >
+        <div class="flex items-center gap-4">
+          <a class="flex items-center gap-3" href="#hero">
+            <span
+              class="material-symbols-outlined text-3xl text-[var(--primary-color)]"
+              >terminal</span
+            >
+            <h2 class="text-xl font-bold tracking-tight">Vikas Jha</h2>
+          </a>
+        </div>
+
+        <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+          <a
+            class="nav-link text-sm font-medium leading-normal text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="nav-link text-sm font-medium leading-normal text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="nav-link text-sm font-medium leading-normal text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#experience"
+            >Experience</a
+          >
+          <a
+            class="nav-link text-sm font-medium leading-normal text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="nav-link text-sm font-medium leading-normal text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#certifications"
+            >Certifications</a
+          >
+          <a
+            class="nav-link text-sm font-medium leading-normal text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#contact"
+            >Contact</a
+          >
+          <a
+            class="btn-primary flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-wide hover:bg-opacity-80 transition-all"
+            href="assets/vikas-jha-resume.pdf"
+            download
+          >
+            <span class="truncate">Download Resume</span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <div class="flex items-center gap-2">
+            <span
+              class="material-symbols-outlined text-xl text-[var(--text-secondary)]"
+              >light_mode</span
+            >
+            <label
+              class="relative inline-flex items-center cursor-pointer"
+              for="theme-toggle"
+            >
+              <input class="sr-only peer" id="theme-toggle" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:bg-[var(--primary-color)]"
+              >
+                <div
+                  class="w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out"
+                  id="theme-toggle-switch"
+                ></div>
+              </div>
+            </label>
+            <span
+              class="material-symbols-outlined text-xl text-[var(--text-secondary)]"
+              >dark_mode</span
+            >
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden text-[var(--text-primary)]"
+          id="mobile-menu-toggle"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </header>
+
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden fixed top-16 left-0 right-0 bg-[var(--background-color)] border-b border-gray-200 dark:border-gray-800 z-40 hidden"
+        id="mobile-menu"
+      >
+        <nav class="flex flex-col p-4 space-y-4">
+          <a
+            class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#experience"
+            >Experience</a
+          >
+          <a
+            class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#certifications"
+            >Certifications</a
+          >
+          <a
+            class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+      </div>
+
+      <main class="flex-1">
+        <!-- Hero Section -->
+        <section class="hero-bg px-4 md:px-10 py-20 md:py-32" id="hero">
+          <div
+            class="container mx-auto grid md:grid-cols-2 gap-12 items-center"
+          >
+            <div
+              class="flex flex-col gap-6 text-center md:text-left"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <h1
+                class="gradient-text-animated text-5xl md:text-6xl font-extrabold leading-tight tracking-tighter"
+              >
+                Vikas Jha
+              </h1>
+              <p
+                class="text-lg md:text-xl font-medium text-[var(--primary-color)]"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                Senior AWS DevOps Engineer | Cloud & Automation Specialist
+              </p>
+              <p
+                class="text-[var(--text-secondary)] max-w-lg mx-auto md:mx-0 leading-relaxed"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                Results-driven DevOps Engineer with 9+ years of experience in
+                automation, cloud infrastructure, and CI/CD. Skilled in AWS,
+                Kubernetes, Docker, and Terraform with a proven track record of
+                designing scalable cloud solutions and optimizing software
+                delivery pipelines.
+              </p>
+              <div
+                class="flex gap-4 mt-4 justify-center md:justify-start"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <a
+                  class="btn-primary flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-80 transition-all"
+                  href="assets/vikas-jha-resume.pdf"
+                  download
+                >
+                  <span class="truncate">Download Resume</span>
+                </a>
+                <a
+                  class="btn-secondary flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-transparent border border-[var(--primary-color)] text-[var(--primary-color)] text-base font-bold leading-normal tracking-wide hover:bg-[var(--primary-color)] hover:text-white dark:hover:text-black transition-colors"
+                  href="#contact"
+                >
+                  <span class="truncate">Contact Me</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="flex justify-center"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+            >
+              <div
+                class="floating w-80 h-80 md:w-96 md:h-96 bg-center bg-no-repeat bg-cover rounded-full border-4 border-gray-200 dark:border-gray-800 shadow-2xl transition-colors duration-300 pulse-glow"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face');
+                "
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section
+          class="px-4 md:px-10 py-20 bg-[var(--surface-color)] transition-colors duration-300"
+          id="about"
+        >
+          <div class="container mx-auto max-w-4xl">
+            <h2
+              class="text-4xl font-bold text-center mb-8 text-[var(--primary-color)]"
+              data-aos="fade-up"
+            >
+              About Me
+            </h2>
+            <div
+              class="text-lg text-[var(--text-secondary)] leading-relaxed space-y-6 font-['Open_Sans']"
+            >
+              <p data-aos="fade-up" data-aos-delay="200">
+                I am a highly skilled and experienced Senior AWS DevOps Engineer
+                with a proven track record of designing, implementing, and
+                managing robust and scalable cloud infrastructure solutions.
+                Based in Bangalore, India, I specialize in automation, cloud
+                infrastructure, and DevOps practices, helping organizations
+                optimize their operations and achieve their business goals.
+              </p>
+              <p data-aos="fade-up" data-aos-delay="400">
+                My expertise spans across Cloud Infrastructure, Automation,
+                Scalable CI/CD pipeline development, and QA integration. I have
+                successfully led numerous projects that have significantly
+                improved deployment efficiency, reduced operational costs, and
+                enhanced system reliability.
+              </p>
+              <div class="grid md:grid-cols-3 gap-6 mt-8">
+                <div
+                  class="text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="600"
+                >
+                  <div class="text-3xl font-bold text-[var(--primary-color)]">
+                    9+
+                  </div>
+                  <div class="text-sm text-[var(--text-secondary)]">
+                    Years Experience
+                  </div>
+                </div>
+                <div
+                  class="text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="700"
+                >
+                  <div class="text-3xl font-bold text-[var(--primary-color)]">
+                    60%
+                  </div>
+                  <div class="text-sm text-[var(--text-secondary)]">
+                    Deployment Time Reduction
+                  </div>
+                </div>
+                <div
+                  class="text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="800"
+                >
+                  <div class="text-3xl font-bold text-[var(--primary-color)]">
+                    30%
+                  </div>
+                  <div class="text-sm text-[var(--text-secondary)]">
+                    Testing Effort Reduction
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Core Competencies Section -->
+        <section class="px-4 md:px-10 py-20" id="skills">
+          <div class="container mx-auto">
+            <h2
+              class="text-4xl font-bold text-center mb-12 text-[var(--primary-color)]"
+              data-aos="fade-up"
+            >
+              Core Competencies
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Cloud -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >cloud</span
+                  >
+                  <h3 class="text-xl font-bold">Cloud</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>AWS (EC2, S3, VPC, IAM)</li>
+                  <li>Lambda, CloudFormation</li>
+                  <li>EKS, ECS</li>
+                </ul>
+              </div>
+
+              <!-- Infrastructure as Code -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >code</span
+                  >
+                  <h3 class="text-xl font-bold">IaC</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>Terraform</li>
+                  <li>CloudFormation</li>
+                  <li>ARM Templates</li>
+                </ul>
+              </div>
+
+              <!-- CI/CD -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >sync</span
+                  >
+                  <h3 class="text-xl font-bold">CI/CD</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>Jenkins</li>
+                  <li>GitHub Actions</li>
+                  <li>GitLab CI/CD, CircleCI</li>
+                </ul>
+              </div>
+
+              <!-- Containers -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >view_in_ar</span
+                  >
+                  <h3 class="text-xl font-bold">Containers</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                  <li>Helm</li>
+                </ul>
+              </div>
+
+              <!-- Monitoring -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="500"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >monitoring</span
+                  >
+                  <h3 class="text-xl font-bold">Monitoring</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>CloudWatch</li>
+                  <li>Prometheus, Grafana</li>
+                  <li>ELK Stack</li>
+                </ul>
+              </div>
+
+              <!-- Scripting -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="600"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >terminal</span
+                  >
+                  <h3 class="text-xl font-bold">Scripting</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>Bash</li>
+                  <li>Python</li>
+                  <li>PowerShell</li>
+                </ul>
+              </div>
+
+              <!-- Configuration Management -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="700"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >settings</span
+                  >
+                  <h3 class="text-xl font-bold">Config Mgmt</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>Ansible</li>
+                  <li>Chef</li>
+                  <li>Puppet</li>
+                </ul>
+              </div>
+
+              <!-- Security -->
+              <div
+                class="card-enhanced bg-[var(--surface-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay="800"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    >security</span
+                  >
+                  <h3 class="text-xl font-bold">Security</h3>
+                </div>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+                  <li>IAM Policies</li>
+                  <li>Compliance Automation</li>
+                  <li>Security Scanning</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Work Experience Timeline -->
+        <section
+          class="px-4 md:px-10 py-20 bg-[var(--surface-color)] transition-colors duration-300"
+          id="experience"
+        >
+          <div class="container mx-auto max-w-4xl">
+            <h2
+              class="text-4xl font-bold text-center mb-12 text-[var(--primary-color)]"
+              data-aos="fade-up"
+            >
+              Work Experience
+            </h2>
+
+            <div class="relative">
+              <!-- Timeline line -->
+              <div
+                class="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"
+              ></div>
+
+              <!-- Truecaller -->
+              <div class="relative mb-12 timeline-item">
+                <div class="ml-16">
+                  <div
+                    class="timeline-card bg-[var(--background-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg"
+                    data-aos="slide-right"
+                    data-aos-delay="200"
+                  >
+                    <div
+                      class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+                    >
+                      <div>
+                        <h3
+                          class="text-2xl font-bold text-[var(--text-primary)]"
+                        >
+                          Senior QA & DevOps Engineer
+                        </h3>
+                        <p
+                          class="text-lg text-[var(--primary-color)] font-semibold"
+                        >
+                          Truecaller
+                        </p>
+                      </div>
+                      <div
+                        class="text-sm text-[var(--text-secondary)] mt-2 md:mt-0"
+                      >
+                        <span
+                          class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full"
+                          >Nov 2019 – Present</span
+                        >
+                      </div>
+                    </div>
+                    <ul class="text-[var(--text-secondary)] space-y-2">
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Designed CI/CD pipelines (Jenkins, GitHub Actions) →
+                        reduced deployment time by 60%
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Automated AWS infrastructure with Terraform &
+                        CloudFormation
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Implemented containerization with Docker + EKS →
+                        improved scalability
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Integrated Selenium & Playwright test suites into CI/CD
+                        pipelines
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Strengthened monitoring with CloudWatch, ELB logs,
+                        Prometheus, Grafana
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mastercard -->
+              <div class="relative timeline-item">
+                <div class="ml-16">
+                  <div
+                    class="timeline-card bg-[var(--background-color)] p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg"
+                    data-aos="slide-left"
+                    data-aos-delay="400"
+                  >
+                    <div
+                      class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+                    >
+                      <div>
+                        <h3
+                          class="text-2xl font-bold text-[var(--text-primary)]"
+                        >
+                          QA Analyst & Automation Engineer
+                        </h3>
+                        <p
+                          class="text-lg text-[var(--primary-color)] font-semibold"
+                        >
+                          Mastercard
+                        </p>
+                      </div>
+                      <div
+                        class="text-sm text-[var(--text-secondary)] mt-2 md:mt-0"
+                      >
+                        <span
+                          class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full"
+                          >Dec 2013 – Nov 2019</span
+                        >
+                      </div>
+                    </div>
+                    <ul class="text-[var(--text-secondary)] space-y-2">
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Built REST API & microservices test frameworks with
+                        Postman, JMeter, Python
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Reduced testing effort by 30% via reusable test modules
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Supported AWS migration validation (EC2, CloudTrail,
+                        IAM)
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-[var(--primary-color)] mr-2">•</span>
+                        Performed load testing for fintech APIs
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Key Projects Section -->
+        <section class="px-4 md:px-10 py-20" id="projects">
+          <div class="container mx-auto">
+            <h2
+              class="text-4xl font-bold text-center mb-12 text-[var(--primary-color)]"
+              data-aos="fade-up"
+            >
+              Key Projects
+            </h2>
+
+            <div class="space-y-12">
+              <!-- Project 1 -->
+              <div
+                class="project-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[var(--surface-color)] p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                <div>
+                  <h3
+                    class="text-2xl font-bold text-[var(--text-primary)] mb-4"
+                  >
+                    EKS-Based Infrastructure Automation
+                  </h3>
+                  <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
+                    Automated microservices infrastructure with Terraform, EKS,
+                    and Helm. Implemented blue-green deployments with ArgoCD for
+                    zero-downtime deployments.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Terraform</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >EKS</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Helm</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >ArgoCD</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="project-image w-full h-64 bg-center bg-no-repeat bg-cover rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-6xl"
+                    >cloud_sync</span
+                  >
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div
+                class="project-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[var(--surface-color)] p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+                data-aos="fade-left"
+                data-aos-delay="400"
+              >
+                <div class="order-2 lg:order-1">
+                  <div
+                    class="project-image w-full h-64 bg-center bg-no-repeat bg-cover rounded-lg bg-gradient-to-r from-green-500 to-blue-600 flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined text-white text-6xl"
+                      >security</span
+                    >
+                  </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                  <h3
+                    class="text-2xl font-bold text-[var(--text-primary)] mb-4"
+                  >
+                    Secure Remote Commerce (SRC) – Mastercard
+                  </h3>
+                  <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
+                    Tested end-to-end encryption protocols and regression
+                    testing on AWS-hosted services. Ensured security compliance
+                    and performance optimization.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >AWS</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Security Testing</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Encryption</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Compliance</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div
+                class="project-card grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[var(--surface-color)] p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+                data-aos="fade-right"
+                data-aos-delay="600"
+              >
+                <div>
+                  <h3
+                    class="text-2xl font-bold text-[var(--text-primary)] mb-4"
+                  >
+                    Data Migration Utility
+                  </h3>
+                  <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
+                    Validated AWS Aurora PostgreSQL migration pipelines with
+                    automated test cases. Ensured data integrity and zero
+                    downtime during migration.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >AWS Aurora</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Migration</span
+                    >
+                    <span
+                      class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm"
+                      >Automation</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="project-image w-full h-64 bg-center bg-no-repeat bg-cover rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-6xl"
+                    >database</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section
+          class="px-4 md:px-10 py-20 bg-[var(--surface-color)] transition-colors duration-300"
+          id="certifications"
+        >
+          <div class="container mx-auto">
+            <h2
+              class="text-4xl font-bold text-center mb-12 text-[var(--primary-color)]"
+              data-aos="fade-up"
+            >
+              Certifications
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                class="card-enhanced flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <div
+                  class="cert-badge w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-2xl"
+                    >workspace_premium</span
+                  >
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-[var(--text-primary)]">
+                    AWS Certified DevOps Engineer – Professional
+                  </h3>
+                  <p class="text-sm text-[var(--text-secondary)]">
+                    In Progress
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="card-enhanced flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <div
+                  class="cert-badge w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-2xl"
+                    >verified</span
+                  >
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-[var(--text-primary)]">
+                    ISTQB Foundation Level
+                  </h3>
+                  <p class="text-sm text-[var(--text-secondary)]">Certified</p>
+                </div>
+              </div>
+
+              <div
+                class="card-enhanced flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                <div
+                  class="cert-badge w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-2xl"
+                    >psychology</span
+                  >
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-[var(--text-primary)]">
+                    SAFe Agile Practitioner
+                  </h3>
+                  <p class="text-sm text-[var(--text-secondary)]">Certified</p>
+                </div>
+              </div>
+
+              <div
+                class="card-enhanced flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                <div
+                  class="cert-badge w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-2xl"
+                    >smart_toy</span
+                  >
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-[var(--text-primary)]">
+                    Selenium Automation Certification
+                  </h3>
+                  <p class="text-sm text-[var(--text-secondary)]">Certified</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="px-4 md:px-10 py-20" id="education">
+          <div class="container mx-auto max-w-4xl">
+            <h2
+              class="text-4xl font-bold text-center mb-12 text-[var(--primary-color)]"
+            >
+              Education
+            </h2>
+
+            <div
+              class="bg-[var(--surface-color)] p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg"
+            >
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-white text-3xl"
+                    >school</span
+                  >
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-[var(--text-primary)]">
+                    B.E. in Computer Science
+                  </h3>
+                  <p class="text-lg text-[var(--primary-color)] font-semibold">
+                    Visvesvaraya Technological University
+                  </p>
+                  <p class="text-[var(--text-secondary)]">2012 • 74%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section
+          class="px-4 md:px-10 py-20 bg-[var(--surface-color)] transition-colors duration-300"
+          id="contact"
+        >
+          <div class="container mx-auto max-w-4xl">
+            <h2
+              class="text-4xl font-bold text-center mb-12 text-[var(--primary-color)]"
+              data-aos="fade-up"
+            >
+              Contact
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                class="contact-card flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <span
+                  class="material-symbols-outlined text-[var(--primary-color)] text-3xl"
+                  >phone</span
+                >
+                <div>
+                  <h3 class="font-semibold text-[var(--text-primary)]">
+                    Phone
+                  </h3>
+                  <a
+                    class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+                    href="tel:+917698589273"
+                    >+91-7698589273</a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="contact-card flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span
+                  class="material-symbols-outlined text-[var(--primary-color)] text-3xl"
+                  >email</span
+                >
+                <div>
+                  <h3 class="font-semibold text-[var(--text-primary)]">
+                    Email
+                  </h3>
+                  <a
+                    class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+                    href="mailto:vikasxjha@gmail.com"
+                    >vikasxjha@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="contact-card flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <svg
+                  class="w-8 h-8 text-[var(--primary-color)]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-[var(--text-primary)]">
+                    LinkedIn
+                  </h3>
+                  <a
+                    class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
+                    href="https://linkedin.com/in/vikasxjha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >linkedin.com/in/vikasxjha</a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="contact-card flex items-center gap-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[var(--background-color)]"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <span
+                  class="material-symbols-outlined text-[var(--primary-color)] text-3xl"
+                  >location_on</span
+                >
+                <div>
+                  <h3 class="font-semibold text-[var(--text-primary)]">
+                    Location
+                  </h3>
+                  <p class="text-[var(--text-secondary)]">Bangalore, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Optional Extras -->
+        <section class="px-4 md:px-10 py-20" id="extras">
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <!-- Blog Placeholder -->
+              <div
+                class="bg-[var(--surface-color)] p-8 rounded-lg border border-gray-200 dark:border-gray-700"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="material-symbols-outlined text-[var(--primary-color)] text-3xl"
+                    >article</span
+                  >
+                  <h3 class="text-2xl font-bold text-[var(--text-primary)]">
+                    Blog
+                  </h3>
+                </div>
+                <p class="text-[var(--text-secondary)] italic">
+                  Coming soon: Insights and articles on DevOps, cloud
+                  infrastructure, and automation best practices.
+                </p>
+              </div>
+
+              <!-- GitHub Projects Placeholder -->
+              <div
+                class="bg-[var(--surface-color)] p-8 rounded-lg border border-gray-200 dark:border-gray-700"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <svg
+                    class="w-8 h-8 text-[var(--primary-color)]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <h3 class="text-2xl font-bold text-[var(--text-primary)]">
+                    GitHub Projects
+                  </h3>
+                </div>
+                <p class="text-[var(--text-secondary)] italic">
+                  Explore my open-source contributions and personal projects on
+                  GitHub soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer
+        class="bg-[var(--surface-color)] py-8 px-10 transition-colors duration-300"
+      >
+        <div
+          class="container mx-auto text-center text-[var(--text-secondary)] text-sm"
+        >
+          <p>
+            © 2025 Vikas Jha. All rights reserved. | Built with passion for
+            DevOps and Cloud Excellence
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- AOS (Animate On Scroll) JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
+
+      // Theme Toggle Functionality
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeContainer = document.getElementById("theme-container");
+      const themeToggleSwitch = document.getElementById("theme-toggle-switch");
+
+      function setTheme(isDark) {
+        if (isDark) {
+          themeContainer.classList.remove("light");
+          themeContainer.classList.add("dark");
+          themeToggleSwitch.style.transform = "translateX(100%)";
+          localStorage.setItem("theme", "dark");
+        } else {
+          themeContainer.classList.remove("dark");
+          themeContainer.classList.add("light");
+          themeToggleSwitch.style.transform = "translateX(0)";
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      themeToggle.addEventListener("change", () => {
+        setTheme(themeToggle.checked);
+      });
+
+      // Initialize theme
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
+
+      setTheme(isDark);
+      themeToggle.checked = isDark;
+
+      // Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Add scroll-triggered animations for elements that come into view
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in-up");
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for scroll animations
+      document
+        .querySelectorAll(
+          ".card-enhanced, .project-card, .timeline-card, .contact-card"
+        )
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      // Add typing effect to the name
+      const nameElement = document.querySelector("h1");
+      if (nameElement) {
+        const text = nameElement.textContent;
+        nameElement.textContent = "";
+        let i = 0;
+
+        function typeWriter() {
+          if (i < text.length) {
+            nameElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+          }
+        }
+
+        // Start typing effect after page load
+        setTimeout(typeWriter, 1000);
+      }
+
+      // Add particle effect on mouse move (subtle)
+      let particles = [];
+
+      document.addEventListener("mousemove", (e) => {
+        if (Math.random() > 0.95) {
+          // Only create particles occasionally
+          createParticle(e.clientX, e.clientY);
+        }
+      });
+
+      function createParticle(x, y) {
+        const particle = document.createElement("div");
+        particle.style.position = "fixed";
+        particle.style.left = x + "px";
+        particle.style.top = y + "px";
+        particle.style.width = "4px";
+        particle.style.height = "4px";
+        particle.style.background = "var(--primary-color)";
+        particle.style.borderRadius = "50%";
+        particle.style.pointerEvents = "none";
+        particle.style.opacity = "0.7";
+        particle.style.zIndex = "9999";
+        particle.style.transition = "all 1s ease-out";
+
+        document.body.appendChild(particle);
+
+        // Animate particle
+        setTimeout(() => {
+          particle.style.transform = "translateY(-20px) scale(0)";
+          particle.style.opacity = "0";
+        }, 10);
+
+        // Remove particle
+        setTimeout(() => {
+          document.body.removeChild(particle);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
