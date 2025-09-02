@@ -24,6 +24,13 @@
     <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- DevIcons CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
     <!-- Custom Styles -->
     <style type="text/tailwindcss">
       :root {
@@ -595,16 +602,29 @@
                 data-aos-delay="100"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >cloud</span
-                  >
+                  <i
+                    class="devicon-amazonwebservices-original colored text-3xl"
+                  ></i>
                   <h3 class="text-xl font-bold">Cloud</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>AWS (EC2, S3, VPC, IAM)</li>
-                  <li>Lambda, CloudFormation</li>
-                  <li>EKS, ECS</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i
+                      class="devicon-amazonwebservices-original colored text-sm"
+                    ></i>
+                    AWS (EC2, S3, VPC, IAM)
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-orange-500"
+                      >functions</span
+                    >
+                    Lambda, CloudFormation
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-kubernetes-plain colored text-sm"></i>
+                    EKS, ECS
+                  </li>
                 </ul>
               </div>
 
@@ -615,16 +635,24 @@
                 data-aos-delay="200"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >code</span
-                  >
+                  <i class="devicon-terraform-plain colored text-3xl"></i>
                   <h3 class="text-xl font-bold">IaC</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>Terraform</li>
-                  <li>CloudFormation</li>
-                  <li>ARM Templates</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-terraform-plain colored text-sm"></i>
+                    Terraform
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i
+                      class="devicon-amazonwebservices-original colored text-sm"
+                    ></i>
+                    CloudFormation
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-azure-plain colored text-sm"></i>
+                    ARM Templates
+                  </li>
                 </ul>
               </div>
 
@@ -635,16 +663,22 @@
                 data-aos-delay="300"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >sync</span
-                  >
+                  <i class="devicon-jenkins-line colored text-3xl"></i>
                   <h3 class="text-xl font-bold">CI/CD</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>Jenkins</li>
-                  <li>GitHub Actions</li>
-                  <li>GitLab CI/CD, CircleCI</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-jenkins-line colored text-sm"></i>
+                    Jenkins
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-github-original colored text-sm"></i>
+                    GitHub Actions
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-gitlab-plain colored text-sm"></i>
+                    GitLab CI/CD, CircleCI
+                  </li>
                 </ul>
               </div>
 
@@ -655,16 +689,22 @@
                 data-aos-delay="400"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >view_in_ar</span
-                  >
+                  <i class="devicon-docker-plain colored text-3xl"></i>
                   <h3 class="text-xl font-bold">Containers</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>Docker</li>
-                  <li>Kubernetes</li>
-                  <li>Helm</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-docker-plain colored text-sm"></i>
+                    Docker
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-kubernetes-plain colored text-sm"></i>
+                    Kubernetes
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-helm-original colored text-sm"></i>
+                    Helm
+                  </li>
                 </ul>
               </div>
 
@@ -675,16 +715,27 @@
                 data-aos-delay="500"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >monitoring</span
-                  >
+                  <i class="devicon-grafana-original colored text-3xl"></i>
                   <h3 class="text-xl font-bold">Monitoring</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>CloudWatch</li>
-                  <li>Prometheus, Grafana</li>
-                  <li>ELK Stack</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i
+                      class="devicon-amazonwebservices-original colored text-sm"
+                    ></i>
+                    CloudWatch
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-prometheus-original colored text-sm"></i>
+                    Prometheus, Grafana
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-yellow-500"
+                      >analytics</span
+                    >
+                    ELK Stack
+                  </li>
                 </ul>
               </div>
 
@@ -695,16 +746,22 @@
                 data-aos-delay="600"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >terminal</span
-                  >
+                  <i class="devicon-bash-plain colored text-3xl"></i>
                   <h3 class="text-xl font-bold">Scripting</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>Bash</li>
-                  <li>Python</li>
-                  <li>PowerShell</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-bash-plain colored text-sm"></i>
+                    Bash
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-python-plain colored text-sm"></i>
+                    Python
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-powershell-plain colored text-sm"></i>
+                    PowerShell
+                  </li>
                 </ul>
               </div>
 
@@ -715,16 +772,27 @@
                 data-aos-delay="700"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
-                    >settings</span
-                  >
+                  <i class="devicon-ansible-plain colored text-3xl"></i>
                   <h3 class="text-xl font-bold">Config Mgmt</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>Ansible</li>
-                  <li>Chef</li>
-                  <li>Puppet</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i class="devicon-ansible-plain colored text-sm"></i>
+                    Ansible
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm text-red-500"
+                      >settings</span
+                    >
+                    Chef
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-orange-500"
+                      >smart_toy</span
+                    >
+                    Puppet
+                  </li>
                 </ul>
               </div>
 
@@ -736,15 +804,32 @@
               >
                 <div class="flex items-center gap-3 mb-4">
                   <span
-                    class="skill-icon material-symbols-outlined text-3xl text-[var(--primary-color)]"
+                    class="material-symbols-outlined text-3xl text-[var(--primary-color)]"
                     >security</span
                   >
                   <h3 class="text-xl font-bold">Security</h3>
                 </div>
-                <ul class="text-sm text-[var(--text-secondary)] space-y-1">
-                  <li>IAM Policies</li>
-                  <li>Compliance Automation</li>
-                  <li>Security Scanning</li>
+                <ul class="text-sm text-[var(--text-secondary)] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i
+                      class="devicon-amazonwebservices-original colored text-sm"
+                    ></i>
+                    IAM Policies
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-blue-500"
+                      >verified_user</span
+                    >
+                    Compliance Automation
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-green-500"
+                      >bug_report</span
+                    >
+                    Security Scanning
+                  </li>
                 </ul>
               </div>
             </div>
